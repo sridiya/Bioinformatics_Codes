@@ -1,4 +1,4 @@
 #for the obtained fastq files perform a quality filter
 fastqutils filter -wildcard 3 -suffixqual '#' -size 25 file.fastq >quality_filter_output.fastq
 #trim the reads for any adapters
-fastqutils trim -3 adaptersequence quality_filter_output.fastq >trimmed_output.fastq
+fastqutils filter -trim adaptersequence 0.8 4 -size 25 quality_filter_output.fastq >trimmed_output.fastq
